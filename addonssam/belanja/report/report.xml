@@ -1,0 +1,13 @@
+<odoo>
+
+    <record id="report_supplier_xlsx" model="ir.actions.report">
+        <field name="name">Supplier Excel</field>
+        <field name="model">belanja.supplier</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">belanja.report_supplier_xlsx</field>
+        <field name="report_file">belanja.report_supplier_xlsx</field>
+        <field name="binding_model_id" ref="model_belanja_supplier"/>
+        <field name="binding_type">report</field>
+    </record>   
+
+</odoo>

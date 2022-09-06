@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="belanja.list">
+      <field name="name">belanja list</field>
+      <field name="model">belanja.belanja</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="belanja.action_window">
+      <field name="name">belanja window</field>
+      <field name="res_model">belanja.belanja</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="belanja.action_server">
+      <field name="name">belanja server</field>
+      <field name="model_id" ref="model_belanja_belanja"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="belanja" id="belanja.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="belanja.menu_1" parent="belanja.menu_root"/>
+    <menuitem name="Menu 2" id="belanja.menu_2" parent="belanja.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="belanja.menu_1_list" parent="belanja.menu_1"
+              action="belanja.action_window"/>
+    <menuitem name="Server to list" id="belanja" parent="belanja.menu_2"
+              action="belanja.action_server"/>
+-->
+  </data>
+</odoo>

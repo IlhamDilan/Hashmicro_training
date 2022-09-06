@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_belanja_kelompokbarang,access.belanja.kelompokbarang,model_belanja_kelompokbarang,,1,1,1,1
+access_belanja_barang,access.belanja.barang,model_belanja_barang,,1,1,1,1
+access_belanja_person,access.belanja.person,model_belanja_person,,1,1,1,1
+access_belanja_kasir,access.belanja.kasir,model_belanja_kasir,,1,1,1,1
+access_belanja_cleaningservice,access.belanja.cleaningservice,model_belanja_cleaningservice,,1,1,1,1
+access_belanja_supplier,access.belanja.supplier,model_belanja_supplier,,1,1,1,1
+access_belanja_penjualan,access.belanja.penjualan,model_belanja_penjualan,,1,1,1,1
+access_belanja_detailpenjualan,access.belanja.detailpenjualan,model_belanja_detailpenjualan,,1,1,1,1

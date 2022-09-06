@@ -1,0 +1,1 @@
+./odoo-bin --addons-path=/home/ilhamdilan/Project/odoo-15.0/addons,/home/ilhamdilan/Project/odoo-15.0/addonssam --xmlrpc-port=8070 --db_port 5432 -d newodoo --limit-memory-hard 0 --limit-time-real=10000 -u belanja
