@@ -7,3 +7,5 @@ access_belanja_cleaningservice,access.belanja.cleaningservice,model_belanja_clea
 access_belanja_supplier,access.belanja.supplier,model_belanja_supplier,,1,1,1,1
 access_belanja_penjualan,access.belanja.penjualan,model_belanja_penjualan,,1,1,1,1
 access_belanja_detailpenjualan,access.belanja.detailpenjualan,model_belanja_detailpenjualan,,1,1,1,1
+access_belanja_barangdatang,access.belanja.barangdatang,model_belanja_barangdatang,,1,1,1,1
+access_belanja_supplierbaru,access.belanja.supplierbaru,model_belanja_supplierbaru,,1,1,1,1

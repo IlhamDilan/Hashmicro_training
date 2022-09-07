@@ -48,23 +48,21 @@ class Penjualan(models.Model):
 
     def write(self, vals):
         for rec in self:
-            a = self.env['belanja.detailpenjualan'].search([('penjualan_id','=',rec.id)])
+            a = self.env['belanja.detailpenjualan'].search([('penjualan_id', '=', rec.id)])
             print(a)
             for data in a:
                 print(str(data.barang_id.name)+' '+str(data.qty)+' '+str(data.barang_id.stok))
                 data.barang_id.stok += data.qty
-        record = super(Penjualan, self).write(vals)
+        record = super(Penjualan,self).write(vals)
         for rec in self:
-            b = self.env['belanja.detailpenjualan'].search([('penjualan_id','=',rec.id)])
+            b = self.env['belanja.detailpenjualan'].search([('penjualan_id', '=', rec.id)])
             print(a)
             print(b)
-            for databaru in a:
+            for databaru in b:
                 if databaru in a:
-                    print(str(databaru.barang_id.name)+' '+str(databaru.qty)+' '+str(data.barang_id.stok))
-                    databaru.barang_id.stok -= data.qty
-                else:
-                    pass
-        return record
+                    print(str(databaru.barang_id.name)+' '+str(databaru.qty)+' '+str(databaru.barang_id.stok))
+                    databaru.barang_id.stok -= databaru.qty
+        return record 
 
     @api.constrains('name')
     def _check_kasir(self):

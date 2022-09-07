@@ -21,6 +21,10 @@
         <field name="model">belanja.supplier</field>
         <field name="arch" type="xml">
             <form string="">
+            <!-- <header>
+                <button string="Input Supplier Baru" 
+                    name="%(belanja.supplierbaru_action_wizzard)d" type="action" class="btn btn-warning"/>
+            </header> -->
                 <sheet>
                     <group>
                         <field name="name"/>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- belanja_supplierbaru form view -->
+    <record id="belanja_supplierbaru_form_wizzard_view" model="ir.ui.view">
+        <field name="name">Input Supplier Baru</field>
+        <field name="model">belanja.supplierbaru</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="alamat"/>
+                        <field name="no_telp"/>
+                    </group>
+                    <footer>
+                        <button name='button_supplierbaru' type='object' string='Submit' class='btn btn-warning'/>
+                        <button name='Cancel' special='cancel' class='btn btn-danger' string='Cancel'/>                    
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- belanja.supplierbaru action window -->
+    <record id="supplierbaru_action_wizzard" model="ir.actions.act_window">
+        <field name="name">Supplier Baru</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">belanja.supplierbaru</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="belanja_supplierbaru_form_wizzard_view"/>
+        <field name="target">new</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="supplierbaru_menu_act_wizzard" 
+            name="Input Suplier" 
+            parent="belanja_menu_root" 
+            action="supplierbaru_action_wizzard" 
+            sequence="50"/>
+</odoo>

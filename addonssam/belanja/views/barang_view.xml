@@ -7,6 +7,7 @@ otre
         <field name="model">belanja.barang</field>
         <field name="arch" type="xml">
             <tree>
+                <!-- <button string="Input Barang" name="%(belanja.barangdatang_action_wizzard)d" type="action" class="btn btn-warning"/> -->
                 <!-- Add your fields here -->
                 <field name="name"/>
                 <field name="harga_barang"/>
@@ -24,6 +25,9 @@ otre
         <field name="model">belanja.barang</field>
         <field name="arch" type="xml">
             <form string="">
+                <header>
+                    <button string="Input Barang" name="%(belanja.barangdatang_action_wizzard)d" type="action" class="btn btn-warning"/>
+                </header>
                 <sheet>
                     <group>
                         <!-- Add your fields here -->

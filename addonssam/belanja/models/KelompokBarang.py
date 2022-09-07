@@ -9,7 +9,8 @@ class kelompokbarang(models.Model):
     name = fields.Selection([
         ('sampoo', 'Sampoo'), 
         ('makananinstant', 'Makanan Instant'), 
-        ('minuman', 'Minuman')
+        ('minuman', 'Minuman'),
+        ('sembako', 'Sembako')
     ], string='Nama Kelompok')
     kode_kelompok = fields.Char(string='kode_kelompok')
     
@@ -21,6 +22,8 @@ class kelompokbarang(models.Model):
             self.kode_kelompok = 'makins-01'
         elif(self.name == 'minuman'):
             self.kode_kelompok = 'minuman-01'
+        elif(self.name == 'sembako'):
+            self.kode_kelompok = 'sembako'
             
 
     # name = fields.Char(string='Nama Kelompok') # fields membuat kolom
