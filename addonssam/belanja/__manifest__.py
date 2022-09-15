@@ -37,6 +37,7 @@
         'views/direksi_view.xml',
         'views/penjualan_view.xml',
         'report/report.xml',
+        'report/Penjualanpdf.xml',
         'wizzard/barangdatang_wizzard_view.xml',
         'wizzard/supplierbaru_wizzard_view.xml',
     ],

@@ -11,6 +11,7 @@
                 <field name="nama_pembeli"/>
                 <field name="tgl_penjualan"/>
                 <field name="total_bayar"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>
@@ -21,12 +22,19 @@
         <field name="model">belanja.penjualan</field>
         <field name="arch" type="xml">
             <form string="Form Penjualan">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="btn btn-primary" states="draft"/>
+                    <button name="action_done" type="object" string="Done" class="btn btn-primary" states="confirm"/>
+                    <button name="action_cancel" type="object" string="Cancel" class="btn btn-warning" states="confirm" confirm="Anda yakin ingin mengcancel Quotation ini?"/>
+                    <button name="action_draft" type="object" string="Kembali ke Draft" class="btn btn-danger" states="cancelled" confirm="Anda yakin ingin mengedit Quotation ini?"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
+                </header>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="nama_pembeli"/>
-                        <field name="tgl_penjualan"/>
-                        <field name="total_bayar"/>
+                        <field name="name" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="nama_pembeli" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="tgl_penjualan" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                        <field name="total_bayar" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
                     </group>
                     <group name="daftarbarang" string="Daftar Barang">
                         <field name="detailpenjualan_ids">

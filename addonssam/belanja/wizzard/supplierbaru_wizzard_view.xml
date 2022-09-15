@@ -31,6 +31,7 @@
         <field name="view_id" ref="belanja_supplierbaru_form_wizzard_view"/>
         <field name="target">new</field>
     </record>
+    
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="supplierbaru_menu_act_wizzard" 
             name="Input Suplier" 

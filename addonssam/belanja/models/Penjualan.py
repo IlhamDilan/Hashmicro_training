@@ -14,6 +14,40 @@ class Penjualan(models.Model):
     detailpenjualan_ids = fields.One2many(comodel_name='belanja.detailpenjualan', 
                                             inverse_name='penjualan_id', 
                                             string='Detail Penjualan')
+    state = fields.Selection(string='Status Penjualan', 
+                            selection=[('draft', 'Draft'), 
+                                       ('confirm', 'Confirm'),
+                                       ('done', 'Done'),
+                                       ('cancelled', 'Cancelled'),
+                                       ],
+                            required=True, readonly=True, default='draft')
+    
+    
+    def action_confirm(self):
+        for record in self:
+            record.write( { 'state': 'confirm'})
+        return True
+    
+    def action_done(self):
+        for record in self:
+            record.write({
+                'state': 'done'
+            })
+        return True 
+    
+    def action_cancel(self):
+        for record in self:
+            record.write({
+                'state': 'cancelled'
+            })
+        return True 
+
+    def action_draft(self):
+        for record in self:
+            record.write({
+                'state': 'draft'
+            })    
+    
     @api.depends('detailpenjualan_ids')
     def _compute_totalbayar(self):
         for rec in self:
@@ -79,7 +113,7 @@ class DetailPenjualan(models.Model):
 
     name = fields.Char(string='Nama')
     # _name = 'belanja.penjualan'
-    penjualan_id = fields.Many2one(comodel_name='belanja.penjualan', string='Detatail Penjualan')
+    penjualan_id = fields.Many2one(comodel_name='belanja.penjualan', string='Detail Penjualan')
     barang_id = fields.Many2one(comodel_name='belanja.barang', string='List Barang')
     harga_satuan = fields.Integer(string='Harga Satuan')
     qty = fields.Integer(string='Quantity')

@@ -16,7 +16,7 @@
     </record>
 
     <!-- belanja.supplier form view -->
-    <record id="model_name_view_form" model="ir.ui.view">
+    <record id="belanja_supplier_view_form" model="ir.ui.view">
         <field name="name">Form Supplier</field>
         <field name="model">belanja.supplier</field>
         <field name="arch" type="xml">
